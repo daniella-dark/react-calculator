@@ -1,0 +1,118 @@
+@import './variables';
+@import './normalize';
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 376px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+
+    &-display {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        height: 175px;
+        background: var(--display-background-color);
+        padding: 40px 30px;
+        color: #fff;
+
+        h1 {
+            font-size: 60px;
+            font-weight: 500;
+            color: #fff;
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            height: 20px;
+            opacity: .5;
+        }
+    }
+
+
+    &-keypad {
+        display: flex;
+
+        button {
+            width: 94px;
+            height: 94px;
+            border: none;
+            font-size: 30px;
+            color: var(--button-text-color);
+            transition: background .2s linear, color .2s linear;
+            cursor: pointer;
+
+            &:hover {
+                background: var(--key-hover-color);
+            }
+
+            &:active {
+                background: darken(#d1d1d1, 20);
+                transition: none;
+            }
+        }
+
+        .input-keys {
+
+            .digit-key {
+                background: var(--button-digit-color);
+
+                &:hover {
+                    background: var(--key-hover-color)
+                }
+
+                &:active {
+                    background: darken(#d1d1d1, 20);
+                    transition: none;
+                }
+            }
+
+            .key-0 {
+                width: calc(94px * 2);
+                text-align: left;
+                padding-left: 36px;
+            }
+        }
+
+        .operator-keys {
+            width: 94px;
+
+            .key-equals {
+                background-color: var(--key-equals-color);
+                color: #fff;
+
+                &:hover {
+                    background-color: var(--key-equals-hover)
+                }
+
+                &:active {
+                    background-color: var(--key-equals-active)
+                }
+            }
+        }
+
+        .function-key, .operator-key {
+            background-color: var(--operator-key-color);
+        }
+
+        .key-clear {
+            color: var(--key-clear-color);
+
+            &:hover, :active {
+                color: #fff;
+            }
+        }
+    }
+}
+
