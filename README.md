@@ -5,6 +5,7 @@
 ---------
 
 * ReactJS + React Hooks
+* TypeScript
 * Redux Toolkit
 * SCSS / CSS Modules
 
