@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { clearDisplayValue } from '../redux/slices/numberSlice'
+import { clearDisplayValue } from '../redux/number/slice'
 
-const ClearButton = () => {
+const ClearButton: React.FC = () => {
   const dispatch = useDispatch()
   
   return (

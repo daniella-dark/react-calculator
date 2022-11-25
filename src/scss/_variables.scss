@@ -1,6 +1,8 @@
+$animation: .2s linear;
+
 :root[data-theme="light"] {
     --body-background-color: #e6e9eb;
-    --display-background-color: linear-gradient(225deg, #de4694 0%, #f8b42c 100%);
+    --opacity: 1;
     --box-shadow: 0 0 30px rgba(51, 51, 51, .2);
     --button-digit-color: #fff;
     --button-text-color: #333;
@@ -15,7 +17,7 @@
 
 :root[data-theme="dark"] {
     --body-background-color: #1e1e1e;
-    --display-background-color: #141414;
+    --opacity: 0;
     --box-shadow: none;
     --button-digit-color: #141414;
     --button-text-color: #fff;

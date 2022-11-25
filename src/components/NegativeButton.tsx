@@ -1,8 +1,8 @@
 import React from 'react'
-import {useDispatch} from 'react-redux'
-import { handleToggleNegative } from '../redux/slices/numberSlice'
+import { useDispatch } from 'react-redux'
+import { handleToggleNegative } from '../redux/number/slice'
 
-const NegativeButton = () => {
+const NegativeButton: React.FC = () => {
   const dispatch = useDispatch()
 
   return (

@@ -18,22 +18,37 @@
     box-shadow: var(--box-shadow);
 
     &-display {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-end;
         height: 175px;
-        background: var(--display-background-color);
+        background: #141414;
         padding: 40px 30px;
         color: #fff;
 
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: var(--opacity);
+            background: linear-gradient(225deg, #de4694 0%, #f8b42c 100%);
+            transition: opacity $animation;
+        }
+
         h1 {
+            position: relative;
             font-size: 60px;
             font-weight: 500;
             color: #fff;
         }
 
         h3 {
+            position: relative;
             margin-bottom: 15px;
             height: 20px;
             opacity: .5;
@@ -50,7 +65,7 @@
             border: none;
             font-size: 30px;
             color: var(--button-text-color);
-            transition: background .2s linear, color .2s linear;
+            transition: background $animation, color $animation;
             cursor: pointer;
 
             &:hover {

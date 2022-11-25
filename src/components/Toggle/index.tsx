@@ -1,13 +1,14 @@
 import React from 'react'
 import styles from './Toggle.module.scss'
 import { useSelector, useDispatch } from 'react-redux';
-import { set } from '../../redux/slices/themeSlice';
+import { setTheme } from '../../redux/theme/slice';
 
 import Light from '../../assets/img/light.png';
 import Dark from '../../assets/img/dark.png';
+import { RootState } from '../../redux/store';
 
-const Toggle = () => {
-    const theme = useSelector((state) => state.theme); 
+const Toggle: React.FC = () => {
+    const theme = useSelector((state: RootState) => state.theme); 
     const dispatch = useDispatch(); 
     const [toggle, setToggle] = React.useState(theme === 'dark');
 
@@ -17,7 +18,7 @@ const Toggle = () => {
     }, [theme]);
 
     const handleSetTheme = () => {
-        dispatch(set(theme === 'dark' ? 'light' : 'dark'));
+        dispatch(setTheme(theme === 'dark' ? 'light' : 'dark'));
         setToggle(!toggle);
     };
 

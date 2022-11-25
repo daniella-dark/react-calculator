@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { handleBackButton } from '../redux/slices/numberSlice'
+import { handleBackButton } from '../redux/number/slice'
 
-const BackButton = () => {
+const BackButton: React.FC = () => {
   const dispatch = useDispatch()
 
   return (

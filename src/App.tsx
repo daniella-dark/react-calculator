@@ -9,24 +9,23 @@ import OperatorButtons from './components/OperatorButtons';
 
 import './scss/app.scss';
 import Toggle from './components/Toggle';
+import { numberSelector } from './redux/number/selectors';
 
-function App() {
-  const number = useSelector((state) => state.number.number);
-  const storedNumber = useSelector((state) => state.number.storedNumber);
-  const functionOperator = useSelector((state) => state.number.functionOperator);
+const App: React.FC = () => {
+  const { number, storedNumber, functionOperator } = useSelector(numberSelector);
 
-  const displayRef = React.useRef();
-
+  const displayRef = React.useRef<HTMLHeadingElement>(null);
+  
   React.useEffect(() => {
-    if (number.length > 8) {
-      displayRef.current.style.fontSize = `${(316 / number.length) * 1.5}px`;
-    } else displayRef.current.style.fontSize = `${60}px`;
+    displayRef.current && (number.length > 8
+      ? displayRef.current.style.fontSize = `${(316 / number.length) * 1.5}px`
+      : displayRef.current.style.fontSize = `${60}px`)
   }, [number]);
 
   React.useEffect(() => {
-    if (storedNumber.length > 8) {
-      displayRef.current.style.fontSize = `${(316 / storedNumber.length) * 1.5}px`;
-    } else displayRef.current.style.fontSize = `${60}px`;
+    displayRef.current && (storedNumber.length > 8
+      ? displayRef.current.style.fontSize = `${(316 / storedNumber.length) * 1.5}px`
+      : displayRef.current.style.fontSize = `${60}px`)
   }, [storedNumber]);
 
   return (

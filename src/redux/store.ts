@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
-import themeReducer from './slices/themeSlice';
-import numberReducer from './slices/numberSlice';
+import themeReducer from './theme/slice';
+import numberReducer from './number/slice';
 
 export const store = configureStore({
   reducer: {
@@ -8,3 +8,5 @@ export const store = configureStore({
     number: numberReducer,
   },
 });
+
+export type RootState = ReturnType<typeof store.getState>
