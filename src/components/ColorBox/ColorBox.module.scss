@@ -1,0 +1,60 @@
+@import '../../scss/variables';
+
+.colors {
+    position: relative;
+    display: flex;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+span {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    transition: transform .4s;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+}
+
+.active {
+    border: 2px solid var(--border-active-color);
+
+    span {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+:global {
+    .red {
+        background: $red-gradient;
+    }
+
+    .yellow {
+        background: $yellow-gradient;
+    }
+
+    .green {
+        background: $green-gradient;
+    }
+
+    .blue {
+        background: $blue-gradient;
+    }
+
+    .grey {
+        background: $grey-gradient;
+    }
+}
+

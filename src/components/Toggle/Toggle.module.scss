@@ -1,7 +1,6 @@
 .switchToggle {
     display: flex;
     align-items: center;
-    margin-bottom: 40px;
 
     img {
         opacity: .4;
@@ -36,10 +35,11 @@
 
 
     .switchOn {
-        background: #14446a;
+        background: var(--toggle-color);
     }
 
     .switchOn::after {
+        background-color: var(--toggle-switch-color);
         left: 37px;
     }
 }

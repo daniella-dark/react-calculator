@@ -10,6 +10,7 @@ import OperatorButtons from './components/OperatorButtons';
 import './scss/app.scss';
 import Toggle from './components/Toggle';
 import { numberSelector } from './redux/number/selectors';
+import { ColorBox } from './components/ColorBox';
 
 const App: React.FC = () => {
   const { number, storedNumber, functionOperator } = useSelector(numberSelector);
@@ -30,7 +31,11 @@ const App: React.FC = () => {
 
   return (
     <div className="wrapper">
-      <Toggle />
+      <div className='overlay' />
+      <div style={{ width: 376, display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 40 }}>
+        <Toggle />
+        <ColorBox />
+      </div>
       <div className="calculator">
         <div className="calculator-display">
           <h3>{`${storedNumber} ${functionOperator} ${number}`}</h3>
